@@ -1,0 +1,111 @@
+body {
+  /* body에 있는 전체 가운데정렬 및 위에서 200px */
+  margin: 200px auto 0;
+  width: 300px;
+  /* h3, input, add-icon 가운데 정렬 */
+  text-align: center;
+  background-color: #ced3df;
+}
+button {
+  border: none;
+  background-color: transparent;
+}
+img {
+  margin-left: -7px;
+}
+.bg {
+  /* header와 footer의 배경색 공통된것 */
+  background: linear-gradient(
+    to right,
+    lightpink 20%,
+    rgb(224, 132, 224),
+    lightblue
+  );
+}
+
+.header {
+  /* width는 속성되므로 height만 작성함 그리고 header에 border-radius 추가함 */
+  height: 50px;
+  border-radius: 20px 20px 0 0;
+  /* border: 1px solid blue; */
+}
+.header h3 {
+  /* h3가 block요소이므로 display를 inline으로 변경하고 vertical-align으로 글자를 수직중앙정렬함 */
+  display: inline;
+  color: #fff;
+  vertical-align: -15px;
+}
+
+.main {
+  /* input이 position을 사용하기 위해서 부모 position을 지정함 그리고 높이지정을 위해 height를 주고
+    배경색을 지정함
+  */
+  position: relative;
+  height: 400px;
+  background-color: rgb(245, 245, 245);
+  overflow-y: auto; /* li의 item이 많아지면 자동으로 스크롤이 생기게 */
+}
+ul.items {
+  list-style: none;
+  /* border: 1px solid red; */
+}
+li {
+  /* border: 1px solid red; */
+  margin: 0 30px 0 -10px;
+  font-size: 15px;
+  /* border: 1px solid red; */
+}
+li ~ li {
+  margin-top: 10px;
+}
+.item {
+  display: flex;
+  justify-content: space-between;
+}
+.item__delete__icon {
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+}
+.item__delete__icon:hover {
+  display: inline-block;
+  transform: scale(1.1);
+}
+.input__list {
+  /* input을 메인을 기준으로 아래로 정렬하기 위해서 position: absolute;
+  bottom: 0;를 했으며, 오른쪽으로 치우쳐서 재정렬을 하기위해서 transform: translate(-50%,0);를 사용
+  input의 크기를 더 크게하기 위해서 width와 height를 지정, input의 border를 없애기 위해서 border: none;을 하고,
+  input의 글자가 너무 왼쪽으로 붙지 않게하기 위해서 들여쓰기 기능인 text-indent: 10px;를 사용했다.
+  */
+  /* position: absolute;
+  bottom: 0; */
+  /* transform: translate(-50%,0); */
+  width: 100%;
+  height: 30px;
+  border: none;
+  text-indent: 10px;
+}
+
+.input__list:focus {
+  /* input:focus 할 때  outline이 보이지 않게 하기 위해서 outline: none;를 해줌*/
+  outline: none;
+}
+
+.footer {
+  overflow: hidden; /* 넘치는거 자르기 */
+  /* header와 똑같이 border-radius: 0 0 20px 20px;를 주었다.*/
+  height: 80px;
+  border-radius: 0 0 20px 20px;
+}
+.footer .add__icon {
+  /* 목록을 추가할 수 있는 아이콘을 넣어서 배치함 */
+  margin-top: 8px;
+  width: 35px;
+  height: 35px;
+  transition: transform 300ms ease-in;
+}
+.footer > .add__icon:hover {
+  /* 아이콘을 hover하면 조금더 크게보임 */
+  cursor: pointer;
+  transform: scale(1.1);
+}
